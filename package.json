@@ -1,0 +1,31 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp-sass": "^4.0.0",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csp3729/Cyn_html.git"
+  },
+  "keywords": [
+    "git",
+    "gulp",
+    "gulp-sass",
+    "gulp-server"
+  ],
+  "author": "Cyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csp3729/Cyn_html/issues"
+  },
+  "homepage": "https://github.com/csp3729/Cyn_html#readme"
+}
