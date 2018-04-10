@@ -11,8 +11,12 @@ jQuery(function($){
         $area.text(this.innerText);
     });
 
-    // $postLi.on('mouseover',function(){
-    //     $(this).css('background','#eee');
-    // })
+    $('.box').xCarousel({
+        // width:1400,
+        height:400,
+        type:'fade',
+        imgs:['images/banner-1.jpg','images/banner-2.jpg','images/banner-3.jpg','images/banner-4.jpg',]
+    })
+
     
 })

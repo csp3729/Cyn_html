@@ -1,7 +1,7 @@
 ;(function($){
     $.fn.xCarousel=function(options){
         let defaults={
-            width:this.width(),
+            width:parseInt(this.css('width')),
             height:300,
             index:0,
             duration:3000,
@@ -19,10 +19,6 @@
 
             let $ul;
 
-            let $li;
-
-            let $page;
-
             let lastIndex = opt.index;
 
             let init = ()=>{
@@ -33,30 +29,21 @@
                 $ul = $('<ul/>');
 
                 let $res = $.map(opt.imgs,function(url){
-                    $li = $('<li/>');
-                    $li.width(opt.width).height(opt.height);
-                    $li.css('background',`url(${url}) center`);
+                    let $li = $('<li/>');
+                    let $img = $('<img/>');
+                    $img.attr('src',url).appendTo($li);
                     return $li;
                 });
 
                 $ul.append($res);
+
                 $ul.appendTo($self);
-
-                //生成页标
-                $page = $('<div/>').addClass('page');
-                let $spans = $.map(opt.imgs,function(url){
-                    $span = $('<span/>');
-                    return $span;
-                })
-                $page.append($spans).appendTo($self);
-                $spans[opt.index].addClass('active');
-
-
 
                 //水平轮播图
                 if(opt.type === 'horizontal'){
                     $ul.width(opt.width*opt.len);
                     $ul.addClass('horizontal');
+                    console.log(opt.width);
                 }
 
                 //淡入淡出
@@ -68,21 +55,8 @@
                     });
 
                     $ul.children('li').eq(opt.index).siblings('li').css('opacity',0);
-                };
+                }
 
-                //鼠标移入移出
-                $self.on('mouseenter',()=>{
-                    clearInterval($self.timer);
-                }).on('mouseleave',()=>{
-                    move();
-                })
-
-                //点击页标
-                .on('click','.page span',function(){
-                    console.log($(this).index());
-                    opt.index = $(this).index();
-                    show();
-                })
                 move();
             }
 
@@ -113,12 +87,7 @@
                         lastIndex = opt.index;
                     });
                     $ul.children('li').eq(lastIndex).animate({opacity:0});
-                };
-
-                $page.children().removeClass('active');
-                $page.children().eq(opt.index).addClass('active');
-                
-                
+                }   
             }
 
             init();
