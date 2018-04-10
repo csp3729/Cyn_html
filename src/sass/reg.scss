@@ -1,0 +1,141 @@
+.header{
+    h1{
+        width:180px;
+        margin:24px 10px 0 0;
+        img{
+            width:176px;
+            // height:44px;
+        }
+    }
+    .head-left{
+        margin:20px 0 0 10px;
+    }
+    p{
+        padding:45px 0 39px ;
+        font-size: 16px;
+        line-height:16px;
+        a{
+            color:#000;
+            margin-left:40px;
+        }
+    }
+}
+.trabecula{
+    padding-top:12px;
+    background:url('img/trabecula.png');
+}
+.register-bt{
+    height:45px;
+    margin:50px 0;
+    border-bottom:2px solid #ddd;
+    ul{
+        padding-left:192px;
+        li{
+            float:left;
+            padding:10px 50px;
+            margin-right:60px;
+            font-size: 16px;
+            line-height:25px;
+            span{
+                float:left;
+                display:block;
+                width:25px;
+                height:25px;
+                border-radius:50%;
+                background-color:#ddd;
+                text-align:center;
+                color:#fff;
+            }
+            p{
+                float:left;
+                margin-left:10px;
+            }
+        }
+    }
+}
+.register-con{
+    width:402px;
+    margin:10px auto;
+    overflow:hidden;
+    .box{
+        // width:400px;
+        // height:45px;
+        overflow:hidden;
+        border:1px solid #ddd;
+        margin-bottom:40px;
+        i{
+            display:block;
+            float:left;
+            width:21px;
+            height:25px;
+            margin:10px 15px;
+            background:url('img/register-verify.png');
+        }
+        .register-phone{
+            background:url('img/register-phone.png') no-repeat;
+        }
+        input{
+            margin:10px 0;
+            font-size: 14px;
+            line-height:25px;
+            border-left:1px solid #ddd;
+            padding-left:10px;
+            color:#000;
+            max-width:228px;
+        }
+        span{
+            display:block;
+            float:right;
+            width: 90px;
+            height:26px;
+            margin:10px 20px 0 0;
+            background-color:#ddd;
+        }
+    }
+    .box:nth-child(3){
+        width:240px;
+    }
+    .getCode{
+        width:150px;
+        margin:0 0 40px 10px;
+        line-height:47px;
+        background-color:#FFA500;
+        border-radius:4px;
+        font-size: 14px;
+        color:#fff;
+        cursor:pointer;
+    }
+    .agreement{
+        overflow:hidden;
+        span{
+            display:block;
+            float:left;
+            width:16px;
+            height:16px;
+            border:1px solid #fff;
+            border-radius:50%;
+            background:url('img/accept-icon.png');
+        }
+        p{
+            float:left;
+            padding-left:22px;
+            font-size: 12px;
+            line-height:18px;
+            color:#666;
+            a{
+                color:#0199CB;
+            }
+        }
+    }
+    .next{
+        display:block;
+        width:100%;
+        height:50px;
+        margin:47px 0 77px 0;
+        border-radius:4px;
+        background-color:#FFA500;
+        font-size: 16px;
+        color:#fff;
+        cursor:pointer;
+    }
+}

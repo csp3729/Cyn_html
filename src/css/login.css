@@ -1,0 +1,127 @@
+.main {
+  padding: 40px;
+  margin-bottom: 36px;
+  background-color: #E2EBE8;
+}
+
+.header h1 {
+  width: 180px;
+  margin: 24px 10px 0 0;
+}
+
+.header h1 img {
+  width: 176px;
+}
+
+.header .head-left {
+  margin: 20px 0 0 10px;
+}
+
+.header p {
+  padding: 45px 0 39px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.header p a {
+  color: #000;
+  margin-left: 40px;
+}
+
+.login-right {
+  width: 530px;
+  padding-top: 19px;
+  margin-bottom: 70px;
+  background: url("img/login-right.png") no-repeat;
+}
+
+.login-right .login-box {
+  margin: 0 89px 0 101px;
+  height: 460px;
+  padding: 0 18px 0 20px;
+  background-color: #fff;
+}
+
+.login-right .login-box p {
+  padding: 16px 0 45px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.login-right .login-box p a {
+  display: block;
+  float: right;
+  color: #FFA500;
+}
+
+.login-right .login-box .box {
+  overflow: hidden;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+.login-right .login-box .box i {
+  display: block;
+  float: left;
+  width: 22px;
+  height: 25px;
+  margin: 10px 15px;
+  background: url("img/register-verify.png") no-repeat;
+}
+
+.login-right .login-box .box .user {
+  background: url("img/user-icon.png") no-repeat;
+}
+
+.login-right .login-box .box .password {
+  background: url("img/password-icon.png") no-repeat;
+}
+
+.login-right .login-box .box input {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 25px;
+  border-left: 1px solid #ddd;
+  padding-left: 10px;
+  color: #000;
+  max-width: 238px;
+}
+
+.login-right .login-box .box span {
+  display: block;
+  float: right;
+  width: 90px;
+  height: 26px;
+  margin: 10px 20px 0 0;
+  background-color: #ddd;
+}
+
+.login-right .login-box .box:nth-child(4) input {
+  width: 127px;
+}
+
+.login-right .login-box .forget {
+  padding: 6px 0 29px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.login-right .login-box .forget a {
+  color: #333;
+}
+
+.login-right .login-box .forget a:hover {
+  color: #FFA500;
+}
+
+.login-right .login-box .user-login {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #FF9900;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
