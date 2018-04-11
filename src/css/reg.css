@@ -70,7 +70,6 @@
 .register-con .box {
   overflow: hidden;
   border: 1px solid #ddd;
-  margin-bottom: 40px;
 }
 
 .register-con .box i {
@@ -96,7 +95,7 @@
   max-width: 228px;
 }
 
-.register-con .box span {
+.register-con .box .randomCode {
   display: block;
   float: right;
   width: 90px;
@@ -105,19 +104,34 @@
   background-color: #ddd;
 }
 
-.register-con .box:nth-child(3) {
+.register-con .phone-verify {
+  overflow: hidden;
+}
+
+.register-con .phone-verify .box {
   width: 240px;
 }
 
-.register-con .getCode {
+.register-con .phone-verify .getCode {
   width: 150px;
-  margin: 0 0 40px 10px;
+  margin-left: 10px;
   line-height: 47px;
   background-color: #FFA500;
   border-radius: 4px;
   font-size: 14px;
   color: #fff;
   cursor: pointer;
+}
+
+.register-con .hint {
+  display: block;
+  width: 0px;
+  height: 14px;
+  padding: 10px 0 16px 65px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #f00;
+  overflow: hidden;
 }
 
 .register-con .agreement {

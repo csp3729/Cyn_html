@@ -62,7 +62,7 @@
         // height:45px;
         overflow:hidden;
         border:1px solid #ddd;
-        margin-bottom:40px;
+        // margin-bottom:40px;
         i{
             display:block;
             float:left;
@@ -83,7 +83,7 @@
             color:#000;
             max-width:228px;
         }
-        span{
+        .randomCode{
             display:block;
             float:right;
             width: 90px;
@@ -92,18 +92,32 @@
             background-color:#ddd;
         }
     }
-    .box:nth-child(3){
-        width:240px;
+    .phone-verify{
+        overflow:hidden;
+        .box{
+            width:240px;
+        }
+        .getCode{
+            width:150px;
+            // margin:0 0 40px 10px;
+            margin-left:10px;
+            line-height:47px;
+            background-color:#FFA500;
+            border-radius:4px;
+            font-size: 14px;
+            color:#fff;
+            cursor:pointer;
+        }
     }
-    .getCode{
-        width:150px;
-        margin:0 0 40px 10px;
-        line-height:47px;
-        background-color:#FFA500;
-        border-radius:4px;
+    .hint{
+        display:block;
+        width:0px;
+        height:14px;
+        padding:10px 0 16px 65px;
         font-size: 14px;
-        color:#fff;
-        cursor:pointer;
+        line-height:14px;
+        color:#f00;
+        overflow:hidden;
     }
     .agreement{
         overflow:hidden;
