@@ -150,40 +150,79 @@
             min-height:712px; 
             li{
                 float:left;
-                width: 230px;
-                height: 320px;
-                border:1px solid #777;
+                width: 220px;
+                height: 310px;
+                border:1px solid #F0F0F0;
+                padding:5px;
                 margin:0 17px 10px 0;
+                font-size: 12px;
+                img{
+                    width: 220px;
+                    // margin-bottom:5px;
+                }
+                div{
+                    padding:5px;
+                    a{
+                        line-height:16px;
+                        color:#333;
+                    }
+                    p{
+                        color:#999999;
+                        line-height:26px;
+                    }
+                    .retail{
+                        font-size: 14px;
+                        font-weight:bold;
+                        color:#FF9900;
+                        margin-right:10px;
+                    }
+                    .price{
+                        text-decoration:line-through;
+                    }
+                }
             }
             li:nth-child(4n){
                 margin-right:0;
             }
         }
         .page{
-            overflow:hidden;
-            border:1px solid #E6E6E6;
-            border-left:0 none;
-            width: 444px;
-            margin:0 auto 20px;
-            font-size: 14px;
-            line-height:36px;
-            li{
+        position:relative;
+        height:38px;
+        margin:20px 0;
+            >ul{
+                overflow:hidden;
+                border:1px solid #E6E6E6;
+                border-left:0 none;
+                // width: 444px;
                 float:left;
-                padding:0 8px;
-                cursor:pointer;
-                color:#AAAAAA;
-                border-left:1px solid #E6E6E6;
-                ul{
-                    li{
-                        padding:0 15px;
-                    }
-                    li:nth-child(1){
-                        border-left:0 none;
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                font-size: 14px;
+                line-height:36px;
+                li{
+                    float:left;
+                    padding:0 8px;
+                    cursor:pointer;
+                    color:#AAAAAA;
+                    border-left:1px solid #E6E6E6;
+                    .page-list{
+                        li{
+                            padding:0 15px;
+                        }
+                        li:nth-child(1){
+                            border-left:0 none;
+                        }
+                        .grey{
+                            font-weight:bold;
+                            background-color:#FAFAFA;
+                            cursor:default;
+                        }
                     }
                 }
-            }
-            >li:nth-child(3){
-                padding:0;
+                >li:nth-child(3){
+                    padding:0;
+                }
             }
         }
     }

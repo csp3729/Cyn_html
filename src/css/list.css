@@ -175,10 +175,41 @@
 
 .list-right .goods .show li {
   float: left;
-  width: 230px;
-  height: 320px;
-  border: 1px solid #777;
+  width: 220px;
+  height: 310px;
+  border: 1px solid #F0F0F0;
+  padding: 5px;
   margin: 0 17px 10px 0;
+  font-size: 12px;
+}
+
+.list-right .goods .show li img {
+  width: 220px;
+}
+
+.list-right .goods .show li div {
+  padding: 5px;
+}
+
+.list-right .goods .show li div a {
+  line-height: 16px;
+  color: #333;
+}
+
+.list-right .goods .show li div p {
+  color: #999999;
+  line-height: 26px;
+}
+
+.list-right .goods .show li div .retail {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FF9900;
+  margin-right: 10px;
+}
+
+.list-right .goods .show li div .price {
+  text-decoration: line-through;
 }
 
 .list-right .goods .show li:nth-child(4n) {
@@ -186,16 +217,24 @@
 }
 
 .list-right .goods .page {
+  position: relative;
+  height: 38px;
+  margin: 20px 0;
+}
+
+.list-right .goods .page > ul {
   overflow: hidden;
   border: 1px solid #E6E6E6;
   border-left: 0 none;
-  width: 444px;
-  margin: 0 auto 20px;
+  float: left;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
   font-size: 14px;
   line-height: 36px;
 }
 
-.list-right .goods .page li {
+.list-right .goods .page > ul li {
   float: left;
   padding: 0 8px;
   cursor: pointer;
@@ -203,14 +242,20 @@
   border-left: 1px solid #E6E6E6;
 }
 
-.list-right .goods .page li ul li {
+.list-right .goods .page > ul li .page-list li {
   padding: 0 15px;
 }
 
-.list-right .goods .page li ul li:nth-child(1) {
+.list-right .goods .page > ul li .page-list li:nth-child(1) {
   border-left: 0 none;
 }
 
-.list-right .goods .page > li:nth-child(3) {
+.list-right .goods .page > ul li .page-list .grey {
+  font-weight: bold;
+  background-color: #FAFAFA;
+  cursor: default;
+}
+
+.list-right .goods .page > ul > li:nth-child(3) {
   padding: 0;
 }

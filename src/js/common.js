@@ -397,7 +397,6 @@ function ajax(options){
 		params = null;
 	}
 
-
 	// jsonp请求
 	// 生成script标签，并传递全局函数名
 	if(opt.type === 'jsonp'){
@@ -455,7 +454,7 @@ function ajax(options){
 				}
 			}
 
-			// 执行传如的函数
+			// 执行传入的函数
 			if(typeof opt.success === 'function'){
 				opt.success(data);
 			}
