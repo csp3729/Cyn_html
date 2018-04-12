@@ -13,8 +13,8 @@ jQuery(function($){
                    <div>
                         <a href="#">${idx.name}</a>
                         <p>
-                            <span class="retail">￥${idx.retail}</span>
-                            <span class="price">￥${idx.price}</span>
+                            <span class="retail">¥${idx.retail}</span>
+                            <span class="price">¥${idx.price}</span>
                         </p>
                         <p>库存999</p>
                     </div>
@@ -38,7 +38,6 @@ jQuery(function($){
 
         // 绑定事件
         let $present = $('.grey').text();
-        console.log($present);
         $page.on('click','li',function(){
             $this = $(this);
             if($this.text() === '首页'){
@@ -96,6 +95,13 @@ jQuery(function($){
         data:{qty:$qty},
         success:fn
     });
+
+
+    //点击跳转详情页事件
+    $show.on('click','li',function(){
+        let $dataId = $(this).attr('data-id');
+        console.log($dataId);
+    })
 
 
     

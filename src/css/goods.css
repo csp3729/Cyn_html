@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.location {
+  padding: 14px 16px;
+  overflow: hidden;
+  background: url("img/location.png") no-repeat left center;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.location a {
+  display: block;
+  float: left;
+}
+
+.location .arrows {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+  float: left;
+  background: url("img/arrows.png");
+}
+
+.location span {
+  display: block;
+  float: left;
+  color: #666;
+}
+
+.ncs-detail {
+  border: 1px solid #DFDFDF;
+  overflow: hidden;
+}
+
+.ncs-detail .preview {
+  float: left;
+}
+
+.ncs-detail .preview > img {
+  width: 400px;
+  border: 1px solid #DFDFDF;
+}
+
+.ncs-detail .preview .spec {
+  padding: 20px 19px 0;
+}
+
+.ncs-detail .preview .spec span {
+  display: block;
+  width: 10px;
+  background-color: #EBEBEB;
+  border: 1px solid #ccc;
+  line-height: 54px;
+  font-family: '宋体';
+  text-align: center;
+}
+
+.ncs-detail .preview .spec .imgs {
+  width: 340px;
+  height: 56px;
+  overflow: hidden;
+}
+
+.ncs-detail .preview .spec .imgs ul {
+  width: 9999px;
+  height: 56px;
+}
+
+.ncs-detail .preview .spec .imgs ul li {
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2px;
+  margin: 0 6px;
+}
+
+.ncs-detail .preview .spec .imgs ul li img {
+  width: 50px;
+}
+
+.ncs-detail .preview .enshrine {
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.ncs-detail .preview .enshrine a {
+  display: block;
+  padding: 0 7px;
+  margin-right: 45px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #777;
+}
+
+.ncs-detail .goods-summary {
+  float: left;
+  width: 584px;
+  height: 525px;
+  border-left: 1px solid #ECECEC;
+  border-right: 1px solid #ECECEC;
+  background-color: #FAFAFA;
+}
+
+.ncs-detail .goods-summary .goods-name {
+  padding: 20px 25px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.ncs-detail .goods-summary .goods-price {
+  padding: 10px 21px;
+  margin-left: -3px;
+  background: url("img/ornamental_img_1.png") no-repeat right;
+  background-color: #eee;
+  border-left: 4px solid #ECECEC;
+  font-size: 12px;
+  line-height: 28px;
+}
+
+.ncs-detail .goods-summary .goods-price .price {
+  font-weight: bold;
+}
+
+.ncs-detail .goods-summary .goods-price .retail {
+  font-size: 18px;
+  line-height: 34px;
+  font-weight: bold;
+  color: #FFA500;
+  vertical-align: top;
+}
+
+.ncs-detail .goods-summary .freight {
+  padding-left: 12px;
+  font-size: 12px;
+  line-height: 28px;
+  color: #666666;
+  border-bottom: 1px dotted #DDDDDD;
+}
+
+.ncs-detail .goods-summary .freight a {
+  padding-right: 12px;
+  background: url("img/public.png") no-repeat 100% -102px;
+  color: #000;
+}
+
+.ncs-detail .info {
+  float: right;
+  width: 210px;
+  height: 314px;
+  background: url("img/goods_ornamental_img.png");
+}

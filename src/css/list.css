@@ -196,6 +196,10 @@
   color: #333;
 }
 
+.list-right .goods .show li div a:hover {
+  color: #FF9900;
+}
+
 .list-right .goods .show li div p {
   color: #999999;
   line-height: 26px;
