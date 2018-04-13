@@ -13,7 +13,6 @@
 
 		}
 
-
 		// this		$(ele)
 		return this.each(function(){
 			let opt = $.extend({},defaults,options);
@@ -39,26 +38,27 @@
 					$big = $('<div/>').addClass('xzoom-big');
 
 					// 大图
+					
 					let $bigImg ;
 					if($smallImg.data('big')){
 						$bigImg = $('<img/>').attr('src',$smallImg.data('big'));
 					}else{
 						$bigImg = $('<img/>').attr('src',$smallImg.prop('src')).width('1000');
 					}
-
+		
 					let left,top;
 					if(opt.position === 'right'){
-						top = 0;
-						left = $smallImg.outerWidth() + opt.gap;
+						top = $small.offset().top;
+						left = $small.offset().left + $smallImg.outerWidth() + opt.gap;
 					}else if(opt.position === 'bottom'){
-						left = 0;
-						top = $smallImg.outerHeight() + opt.gap;
+						left = $small.offset().left;
+						top = $small.offset().top + $smallImg.outerHeight() + opt.gap;
 					}else if(opt.position === 'left'){
-						top = 0;
-						left = - opt.gap - opt.width;
+						top = $small.offset().top;
+						left = $small.offset().left - opt.gap - opt.width;
 					}else if(opt.position === 'top'){
-						left = 0;
-						top = - opt.height - opt.gap;
+						left = $small.offset().left;
+						top = $small.offset().top - opt.height - opt.gap;
 					}
 
 					// 设置样式
@@ -70,7 +70,7 @@
 					})
 
 					$bigImg.appendTo($big);
-					$big.appendTo($small);
+					$big.appendTo('body');
 
 					$zoom = $('<div/>').addClass('zoom');
 					$zoom.appendTo($small);

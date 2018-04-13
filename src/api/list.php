@@ -3,7 +3,7 @@
  * @Author: Marte
  * @Date:   2018-04-11 20:30:05
  * @Last Modified by:   Marte
- * @Last Modified time: 2018-04-12 16:48:00
+ * @Last Modified time: 2018-04-13 17:28:40
  */
     //设置page,qty信息
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -23,7 +23,7 @@
     $data = $result->fetch_all(MYSQLI_ASSOC);
 
     //释放查询结果集
-    // $result->close();
+    $result->close();
     //关闭数据库
     $conn->close();
     
@@ -35,6 +35,6 @@
             "page" => $page*1
         );
 
-
+    //转换成json字符串输出
     echo json_encode($res,JSON_UNESCAPED_UNICODE);
 ?>

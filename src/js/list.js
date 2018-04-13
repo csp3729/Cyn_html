@@ -11,7 +11,7 @@ jQuery(function($){
             $li = $('<li/>').attr('data-id',idx.id);
             $li.append(`<img/ src=${idx.img}>
                    <div>
-                        <a href="#">${idx.name}</a>
+                        <a href="javascript:void(0)">${idx.name}</a>
                         <p>
                             <span class="retail">¥${idx.retail}</span>
                             <span class="price">¥${idx.price}</span>
@@ -77,7 +77,6 @@ jQuery(function($){
                         return;
                     }
                     let $page = $this.text();
-                    console.log($page);
                     ajax({
                         url:"../api/list.php",
                         data:{qty:$qty,page:$page},
@@ -100,7 +99,7 @@ jQuery(function($){
     //点击跳转详情页事件
     $show.on('click','li',function(){
         let $dataId = $(this).attr('data-id');
-        console.log($dataId);
+        location.href="goods.html?id=" + $dataId;
     })
 
 
