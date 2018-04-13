@@ -22,6 +22,7 @@
 			// 小图容器
 			let $small = $(this);
 			let $big;
+			$('.zoom').remove();
 			let $zoom;
 			let ratio;
 
@@ -34,31 +35,30 @@
 					let $smallImg = $small.children('img');
 
 					// 创建大图容器
+					$('.xzoom-big').remove();
 					$big = $('<div/>').addClass('xzoom-big');
 
 					// 大图
 					let $bigImg ;
 					if($smallImg.data('big')){
-						console.log(666);
 						$bigImg = $('<img/>').attr('src',$smallImg.data('big'));
 					}else{
-						console.log(777);
-						$bigImg = $('<img/>').attr('src',$smallImg.prop('src')).width('800');
+						$bigImg = $('<img/>').attr('src',$smallImg.prop('src')).width('1000');
 					}
 
 					let left,top;
 					if(opt.position === 'right'){
-						top = $small.offset().top;
-						left = $small.offset().left + $smallImg.outerWidth() + opt.gap;
+						top = 0;
+						left = $smallImg.outerWidth() + opt.gap;
 					}else if(opt.position === 'bottom'){
-						left = $small.offset().left;
-						top = $small.offset().top + $smallImg.outerHeight() + opt.gap;
+						left = 0;
+						top = $smallImg.outerHeight() + opt.gap;
 					}else if(opt.position === 'left'){
-						top = $small.offset().top;
-						left = $small.offset().left - opt.gap - opt.width;
+						top = 0;
+						left = - opt.gap - opt.width;
 					}else if(opt.position === 'top'){
-						left = $small.offset().left;
-						top = $small.offset().top - opt.height - opt.gap;
+						left = 0;
+						top = - opt.height - opt.gap;
 					}
 
 					// 设置样式
@@ -70,7 +70,7 @@
 					})
 
 					$bigImg.appendTo($big);
-					$big.appendTo('body');
+					$big.appendTo($small);
 
 					$zoom = $('<div/>').addClass('zoom');
 					$zoom.appendTo($small);

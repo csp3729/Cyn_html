@@ -29,7 +29,6 @@
 
 .ncs-detail {
   border: 1px solid #DFDFDF;
-  overflow: hidden;
   margin-bottom: 10px;
 }
 
@@ -38,12 +37,13 @@
 }
 
 .ncs-detail .preview .goodsImg img {
+  display: block;
   width: 400px;
-  border: 1px solid #DFDFDF;
 }
 
 .ncs-detail .preview .spec {
-  padding: 20px 19px 0;
+  padding: 20px 18px 0;
+  border-top: 1px solid #DFDFDF;
 }
 
 .ncs-detail .preview .spec span {
@@ -96,7 +96,7 @@
 
 .ncs-detail .goods-summary {
   float: left;
-  width: 585px;
+  width: 587px;
   height: 525px;
   border-right: 1px solid #ECECEC;
   background-color: #FAFAFA;
@@ -127,10 +127,8 @@
 
 .ncs-detail .goods-summary .goods-price {
   padding: 10px 0px;
-  margin-left: -3px;
   background: url("img/ornamental_img_1.png") no-repeat right;
   background-color: #eee;
-  border-left: 4px solid #ECECEC;
   line-height: 28px;
 }
 
