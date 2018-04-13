@@ -25,16 +25,15 @@
 
 .car {
   padding: 0 105px;
-  height: 800px;
 }
 
-.car p {
+.car > p {
   border-bottom: 2px solid #E6E6E6;
   color: #FFA500;
   height: 48px;
 }
 
-.car p span {
+.car > p span {
   display: block;
   float: left;
   font-size: 16px;
@@ -45,17 +44,160 @@
   border-bottom: 2px solid #FFA500;
 }
 
-.car p span em {
+.car > p span em {
   font-weight: normal;
 }
 
-.car .car-nav li {
-  float: left;
-  font-size: 14px;
+.car .car-nav {
+  font-size: 12px;
   line-height: 50px;
 }
 
-.car .car-nav li .all {
+.car .car-nav .nav-left {
+  float: left;
+}
+
+.car .car-nav .nav-left li {
+  float: left;
+  padding-right: 76px;
+}
+
+.car .car-nav .nav-left li .all {
   margin: 0 8px 0 15px;
   vertical-align: middle;
+}
+
+.car .car-nav .nav-right {
+  float: right;
+}
+
+.car .car-nav .nav-right li {
+  float: left;
+  padding: 0 68px 0 28px;
+}
+
+.car .car-goods {
+  border: 1px solid #CCC;
+  background-color: #FCFCFC;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+
+.car .car-goods ul {
+  padding: 18px 20px;
+  border-top: 1px solid #E7E7E7;
+  overflow: hidden;
+}
+
+.car .car-goods ul li {
+  float: left;
+}
+
+.car .car-goods ul li .choice {
+  vertical-align: top;
+  margin: 1px 12px 0 0;
+}
+
+.car .car-goods ul li img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #eee;
+  margin: 2px 10px 0 0;
+}
+
+.car .car-goods ul li h4 {
+  width: 182px;
+  margin-right: 40px;
+}
+
+.car .car-goods ul li p {
+  width: 134px;
+  margin-right: 40px;
+  color: #9C9C9C;
+}
+
+.car .car-goods ul .goods-price {
+  width: 70px;
+  margin-right: 30px;
+}
+
+.car .car-goods ul .goods-price span {
+  display: block;
+}
+
+.car .car-goods ul .goods-price .price {
+  color: #9C9C9C;
+}
+
+.car .car-goods ul .goods-qty {
+  width: 78px;
+  margin-right: 45px;
+  text-align: center;
+}
+
+.car .car-goods ul .goods-qty span {
+  display: block;
+  width: 17px;
+  height: 22px;
+  line-height: 22px;
+  border: 1px solid #E5E5E5;
+  background-color: #F0F0F0;
+}
+
+.car .car-goods ul .goods-qty .plus {
+  float: right;
+  border-left: 0 none;
+}
+
+.car .car-goods ul .goods-qty .minus {
+  float: left;
+  border-right: 0 none;
+}
+
+.car .car-goods ul .goods-qty em {
+  display: block;
+  float: left;
+  border: 1px solid #AAAAAA;
+}
+
+.car .car-goods ul .goods-qty .qty {
+  display: block;
+  width: 40px;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.car .car-goods ul .subtotal {
+  width: 70px;
+  margin-right: 70px;
+  text-align: center;
+}
+
+.car .car-goods ul .operation span {
+  display: block;
+}
+
+.car .car-goods ul:nth-child(1) {
+  border: 0 none;
+}
+
+.car .goods-account {
+  font-size: 12px;
+  line-height: 50px;
+  background-color: #E5E5E5;
+  overflow: hidden;
+}
+
+.car .goods-account .account-left {
+  padding-left: 5px;
+}
+
+.car .goods-account .account-left li {
+  float: left;
+}
+
+.car .goods-account .account-right li {
+  float: left;
 }

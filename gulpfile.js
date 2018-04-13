@@ -25,13 +25,13 @@ let browserSync = require('browser-sync');
 gulp.task('server',function(){
     browserSync({
         // 服务器路径
-        // server:'./src/',
+        server:'./src/',
 
         // 代理服务器
-        proxy:'http://localhost:7027',
+        // proxy:'http://localhost:7027',
 
         // 端口
-        port:2244,
+        // port:2244,
 
         //监听文件，自动刷新服务器
         files:['./src/**/*.html','./src/css/*.css']

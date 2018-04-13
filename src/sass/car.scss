@@ -24,8 +24,8 @@
 
 .car{
     padding:0 105px;
-    height:800px;
-    p{
+    // height:800px;
+    >p{
         border-bottom:2px solid #E6E6E6;
         color:#FFA500;
         height:48px;
@@ -44,14 +44,136 @@
         }
     }
     .car-nav{
-        li{
+        font-size: 12px;
+        line-height:50px;
+        .nav-left{
             float:left;
-            font-size: 14px;
-            line-height:50px;
-            .all{
-                margin:0 8px 0 15px;
-                vertical-align:middle;
+            li{
+                float:left;
+                padding-right:76px;
+                .all{
+                    margin:0 8px 0 15px;
+                    vertical-align:middle;
+                }
+            }
+        }
+        .nav-right{
+            float:right;
+            li{
+                float:left;
+                padding:0 68px 0 28px;
+            }
+        }
+    }
+    .car-goods{
+        border:1px solid #CCC;
+        background-color:#FCFCFC;
+        font-size: 12px;
+        line-height:18px;
+        margin-bottom:15px;
+        ul{
+            padding:18px 20px;
+            border-top:1px solid #E7E7E7;
+            overflow:hidden;
+            li{
+                float:left;
+                .choice{
+                    vertical-align:top;
+                    margin:1px 12px 0 0;
+                }
+                img{
+                    width: 80px;
+                    height:80px;
+                    border:1px solid #eee;
+                    margin:2px 10px 0 0;
+                }
+                h4{
+                    width:182px;
+                    margin-right:40px;
+                }
+                p{
+                    width:134px;
+                    margin-right:40px;
+                    color:#9C9C9C;
+                }
+            }
+            .goods-price{
+                width:70px;
+                margin-right:30px;
+                span{
+                    display:block;
+                }
+                .price{
+                    color:#9C9C9C;
+                }
+
+            }
+            .goods-qty{
+                width:78px;
+                margin-right:45px;
+                text-align:center;
+                span{
+                    display:block;
+                    width:17px;
+                    height:22px;
+                    line-height:22px;
+                    border:1px solid #E5E5E5;
+                    background-color:#F0F0F0;
+                }
+                .plus{
+                    float:right;
+                    border-left:0 none;
+                }
+                .minus{
+                    float:left;
+                    border-right:0 none;
+                }
+                em{
+                    display:block;
+                    float:left;
+                    border:1px solid #AAAAAA;
+                }
+                .qty{
+                    display:block;
+                    width:40px;
+                    font-size: 12px;
+                    // height:23px;
+                    line-height:22px;
+                    text-align:center;
+                }
+            }
+            .subtotal{
+                width:70px;
+                margin-right:70px;
+                text-align:center;
+            }
+            .operation{
+                span{
+                    display:block;
+                }
+            }
+        }
+        ul:nth-child(1){
+            border:0 none;
+        }
+    }
+    .goods-account{
+        font-size: 12px;
+        line-height:50px;
+        background-color:#E5E5E5;
+        overflow:hidden;
+        .account-left{
+            padding-left:5px;
+            li{
+                float:left;
+            }
+        }
+        .account-right{
+            li{
+                float:left;
             }
         }
     }
 }
+
+
