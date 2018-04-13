@@ -1,10 +1,11 @@
-/* 
-* @Author: Marte
-* @Date:   2018-04-12 17:14:21
-* @Last Modified by:   Marte
-* @Last Modified time: 2018-04-12 17:29:04
-*/
+jQuery(function($){
+    let $goodsImg = $('.goodsImg');
+    //调用放大镜插件
+    $goodsImg.xZoom({
+        width:450,
+        height:450
+    });
 
-$(document).ready(function(){
-    
+    let $imgs = $('.imgs');
+
 });

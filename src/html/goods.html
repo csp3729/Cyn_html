@@ -5,7 +5,10 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../css/goods.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/jquery-xZoom/jquery.xZoom.css" />
     <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="../lib/jquery-xZoom/jquery.xZoom.js" type="text/javascript"></script>
+    <script src="../js/goods.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
@@ -132,18 +135,20 @@
             </div>
             <div class="ncs-detail">
                 <div class="preview">
-                    <img src="../images/building_materials_001.jpg" alt="" />
+                    <div class="goodsImg">
+                        <img src="../images/building_materials_001.jpg" />
+                    </div>
                     <div class="spec">
                         <span class="fl">&lt;</span>
                         <span class="fr">&gt;</span>
                         <div class="imgs">
                             <ul>
                                 <li><img src="../images/building_materials_001.jpg" alt="" /></li>
-                                <li><img src="../images/building_materials_001.jpg" alt="" /></li>
-                                <li><img src="../images/building_materials_001.jpg" alt="" /></li>
-                                <li><img src="../images/building_materials_001.jpg" alt="" /></li>
-                                <li><img src="../images/building_materials_001.jpg" alt="" /></li>
-                                <li><img src="../images/building_materials_001.jpg" alt="" /></li>
+                                <li><img src="../images/building_materials_002.jpg" alt="" /></li>
+                                <li><img src="../images/building_materials_003.jpg" alt="" /></li>
+                                <li><img src="../images/building_materials_004.jpg" alt="" /></li>
+                                <li><img src="../images/building_materials_005.jpg" alt="" /></li>
+                                <li><img src="../images/building_materials_006.jpg" alt="" /></li>
                             </ul>
                         </div>
                     </div>
@@ -156,22 +161,77 @@
                         新中源 托斯卡纳仿古瓷砖水泥砖阳台文化石背景墙瓷砖地砖罗马6102 600*600<!-- 商品name -->
                     </div>
                     <div class="goods-price">
-                        <p>市　场　价：　<span class="price">¥239.00</span></p>
-                        <p>商　城　价：　<span class="retail">¥53.00</span></p>
-                        <!-- 商品评分，无项目要求功能，先使用图片代替，有空再做 -->
+                        <dl>
+                            <dt>市　场　价：　</dt>
+                            <dd class="price">¥239.00</dd>
+                        </dl>
+                        <dl>
+                            <dt>商　城　价：　</dt>
+                            <dd class="retail">¥53.00</dd>
+                        </dl>
                     </div>
                     <div class="freight">
-                        至<a href="javascript:void(0)">全国</a>：　卖家承担运费
+                        <dl>
+                            <dt>至<a href="javascript:void(0)">全国</a>：　</dt>
+                            <dd>卖家承担运费</dd>
+                        </dl>
                     </div>
-                    <div class="qty"></div>
+                    <div class="qty">
+                        <dl>
+                            <dt>购买数量：　</dt>
+                            <dd>
+                                <input type="text" class="goods-qty" value="1"/>
+                                <span class="plus">+</span>
+                                <span class="minus">-</span>
+                            </dd>
+                            <dd class="inventory">(当前库存<em>20</em>件 )</dd>
+                        </dl>
+                    </div>
                     <div class="btn">
-                        <a href="#">立即购买</a><a href="#"><i></i>添加购物车</a>
+                        <a href="#" class="buy">立即购买</a><a href="#" class="add"><i></i>添加购物车</a>
                     </div>
                 </div>
                 <div class="info">
                     <!-- 无项目要求功能，使用图片代替 -->
                 </div>
-            </div>            
+            </div>
+            <div class="ncs-goods-layout">
+                <div class="layout-left">
+                    <!-- 无项目要求功能，使用图片代替 -->
+                </div>
+                <div class="layout-right">
+                    <ul class="category-menu">
+                        <li class="current">
+                            <a href="javascript:void(0)">商品详情</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">商品评价(<em>0</em>)</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">销售记录(<em>0</em>)</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">购买资讯</a>
+                        </li>
+                    </ul>
+                    <div class="details">
+                        <ul class="con-box">
+                            <li>商家货号：<span>12716241</span></li>
+                            <li>品牌：<span>凯纳豪迪</span></li>
+                        </ul>
+                        <div class="goods-imgs">
+                            <img src="../images/goods_imgs_1.jpg"  />
+                            <img src="../images/goods_imgs_2.jpg"  />
+                            <img src="../images/goods_imgs_1.jpg"  />
+                            <img src="../images/goods_imgs_2.jpg"  />
+                        </div>
+                    </div>
+                    <div class="evaluate">
+                        <div class="goods-evaluate"></div>
+                        <div class="evaluate-list"></div>
+                    </div>
+                </div>
+            </div>      
         </div>
     </main>
     <div class="footer-contact">
