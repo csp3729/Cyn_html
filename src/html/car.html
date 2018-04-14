@@ -5,6 +5,8 @@
     <title>我的购物车</title>
     <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../css/car.css" />
+    <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="../js/car.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
@@ -86,7 +88,7 @@
     <main class="main">
         <div class="container">
             <div class="car">
-                <p><span>全部商品　<em>3</em></span></p>
+                <p><span>全部商品　<em class="all-goods">3</em></span></p>
                 <div class="car-nav clearfix">
                     <ul class="nav-left">
                         <li><input type="checkbox" class="all"/>全选</li>
@@ -112,18 +114,18 @@
                             <p>这个也是效果测试测试这个也是效果测试测试</p>
                         </li>
                         <li class="goods-price">
-                            <span class="price">$22.00</span>
-                            <span class="retail">$9.90</span>
+                            <span class="price">¥22.00</span>
+                            <span class="retail">¥9.90</span>
                         </li>
                         <li class="goods-qty">
                             <span class="minus">-</span>
                             <span class="plus">+</span>
-                            <em><input type="text" value="10" class="qty"/></em>
+                            <em><input type="text" value="1" class="qty"/></em>
                         </li>
-                        <li class="subtotal">$99.00</li>
+                        <li class="subtotal">¥99.00</li>
                         <li class="operation">
-                            <span>移入收藏夹</span>
-                            <span>删除</span>
+                            <span class="enshrine"><a>移入收藏夹</a></span>
+                            <span class="del"><a>删除</a></span>
                         </li>
                     </ul>
                     <ul>
@@ -138,18 +140,18 @@
                             <p>这个也是效果测试测试这个也是效果测试测试</p>
                         </li>
                         <li class="goods-price">
-                            <span class="price">$22.00</span>
-                            <span class="retail">$9.90</span>
+                            <span class="price">¥22.00</span>
+                            <span class="retail">¥9.90</span>
                         </li>
                         <li class="goods-qty">
                             <span class="minus">-</span>
                             <span class="plus">+</span>
-                            <em><input type="text" value="10" class="qty"/></em>
+                            <em><input type="text" value="1" class="qty"/></em>
                         </li>
-                        <li class="subtotal">$99.00</li>
+                        <li class="subtotal">¥99.00</li>
                         <li class="operation">
-                            <span>移入收藏夹</span>
-                            <span>删除</span>
+                            <span class="enshrine"><a>移入收藏夹</a></span>
+                            <span class="del"><a>删除</a></span>
                         </li>
                     </ul>
                     <ul>
@@ -164,32 +166,85 @@
                             <p>这个也是效果测试测试这个也是效果测试测试</p>
                         </li>
                         <li class="goods-price">
-                            <span class="price">$22.00</span>
-                            <span class="retail">$9.90</span>
+                            <span class="price">¥22.00</span>
+                            <span class="retail">¥9.90</span>
                         </li>
                         <li class="goods-qty">
                             <span class="minus">-</span>
                             <span class="plus">+</span>
-                            <em><input type="text" value="10" class="qty"/></em>
+                            <em><input type="text" value="1" class="qty"/></em>
                         </li>
-                        <li class="subtotal">$99.00</li>
+                        <li class="subtotal">¥99.00</li>
                         <li class="operation">
-                            <span>移入收藏夹</span>
-                            <span>删除</span>
+                            <span class="enshrine"><a>移入收藏夹</a></span>
+                            <span class="del"><a>删除</a></span>
+                        </li>
+                    </ul>
+                    </ul>
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="choice"/>
+                        </li>
+                        <li>
+                            <img src="../images/building_materials_001.jpg" />
+                        </li>
+                        <li><h4>这是个效果测试这是个效果测试这是个效果测试</h4></li>
+                        <li>
+                            <p>这个也是效果测试测试这个也是效果测试测试</p>
+                        </li>
+                        <li class="goods-price">
+                            <span class="price">¥22.00</span>
+                            <span class="retail">¥9.90</span>
+                        </li>
+                        <li class="goods-qty">
+                            <span class="minus">-</span>
+                            <span class="plus">+</span>
+                            <em><input type="text" value="1" class="qty"/></em>
+                        </li>
+                        <li class="subtotal">¥99.00</li>
+                        <li class="operation">
+                            <span class="enshrine"><a>移入收藏夹</a></span>
+                            <span class="del"><a>删除</a></span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="choice"/>
+                        </li>
+                        <li>
+                            <img src="../images/building_materials_001.jpg" />
+                        </li>
+                        <li><h4>这是个效果测试这是个效果测试这是个效果测试</h4></li>
+                        <li>
+                            <p>这个也是效果测试测试这个也是效果测试测试</p>
+                        </li>
+                        <li class="goods-price">
+                            <span class="price">¥22.00</span>
+                            <span class="retail">¥9.90</span>
+                        </li>
+                        <li class="goods-qty">
+                            <span class="minus">-</span>
+                            <span class="plus">+</span>
+                            <em><input type="text" value="1" class="qty"/></em>
+                        </li>
+                        <li class="subtotal">¥99.00</li>
+                        <li class="operation">
+                            <span class="enshrine"><a>移入收藏夹</a></span>
+                            <span class="del"><a>删除</a></span>
                         </li>
                     </ul>
                 </div>
                 <div class="goods-account">
                     <ul class="account-left fl">
-                        <li><input type="checkbox" />全选</li>
-                        <li>删除</li>
-                        <li>移入收藏夹</li>
-                        <li>分享</li>
+                        <li><input type="checkbox" class="all"/><span>全选</span></li>
+                        <li><span>删除</span></li>
+                        <li><span>移入收藏夹</span></li>
+                        <li><span>分享</span></li>
                     </ul>
                     <ul class="account-right fr">
-                        <li>已选商品<span>0</span>件</li>
-                        <li>合计：<span>0</span>元</li>
-                        <li>结算</li>
+                        <li class="selected">已选商品<span>0</span>件</li>
+                        <li class="total">合计：<span>0.00</span>元</li>
+                        <li class="accounts">结算</li>
                     </ul>
                 </div>
             </div>

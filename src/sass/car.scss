@@ -105,6 +105,7 @@
                 }
                 .price{
                     color:#9C9C9C;
+                    text-decoration: line-through;
                 }
 
             }
@@ -119,6 +120,12 @@
                     line-height:22px;
                     border:1px solid #E5E5E5;
                     background-color:#F0F0F0;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
                 }
                 .plus{
                     float:right;
@@ -140,6 +147,7 @@
                     // height:23px;
                     line-height:22px;
                     text-align:center;
+                    min:1;
                 }
             }
             .subtotal{
@@ -150,6 +158,9 @@
             .operation{
                 span{
                     display:block;
+                    a{
+                        cursor:pointer;
+                    }
                 }
             }
         }
@@ -162,15 +173,50 @@
         line-height:50px;
         background-color:#E5E5E5;
         overflow:hidden;
+        margin-bottom:20px;
         .account-left{
-            padding-left:5px;
             li{
                 float:left;
+                margin-right:30px;
+                .all{
+                    vertical-align:middle;
+                    margin:0 5px;
+                }
+                span{
+                    cursor:pointer;
+                }
+            }
+            span:hover{
+                color:#FFA500;
             }
         }
         .account-right{
             li{
                 float:left;
+                line-height:48px;
+                span{
+                    font-size: 18px;
+                    color:#FFA500;
+                    margin:0 6px;
+                }
+            }
+            .selected{
+
+            }
+            .total{
+                margin-left:30px;
+            }
+            .accounts{
+                font-size: 20px;
+                line-height:50px;
+                color:#fff;
+                padding:0 36px;
+                margin-left:5px;
+                background-color:#B0B0B0;
+                cursor:pointer;
+            }
+            .accounts:hover{
+                background-color:#FFA500;
             }
         }
     }

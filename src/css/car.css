@@ -128,6 +128,7 @@
 
 .car .car-goods ul .goods-price .price {
   color: #9C9C9C;
+  text-decoration: line-through;
 }
 
 .car .car-goods ul .goods-qty {
@@ -143,6 +144,12 @@
   line-height: 22px;
   border: 1px solid #E5E5E5;
   background-color: #F0F0F0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .car .car-goods ul .goods-qty .plus {
@@ -167,6 +174,7 @@
   font-size: 12px;
   line-height: 22px;
   text-align: center;
+  min: 1;
 }
 
 .car .car-goods ul .subtotal {
@@ -179,6 +187,10 @@
   display: block;
 }
 
+.car .car-goods ul .operation span a {
+  cursor: pointer;
+}
+
 .car .car-goods ul:nth-child(1) {
   border: 0 none;
 }
@@ -188,16 +200,52 @@
   line-height: 50px;
   background-color: #E5E5E5;
   overflow: hidden;
-}
-
-.car .goods-account .account-left {
-  padding-left: 5px;
+  margin-bottom: 20px;
 }
 
 .car .goods-account .account-left li {
   float: left;
+  margin-right: 30px;
+}
+
+.car .goods-account .account-left li .all {
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+.car .goods-account .account-left li span {
+  cursor: pointer;
+}
+
+.car .goods-account .account-left span:hover {
+  color: #FFA500;
 }
 
 .car .goods-account .account-right li {
   float: left;
+  line-height: 48px;
+}
+
+.car .goods-account .account-right li span {
+  font-size: 18px;
+  color: #FFA500;
+  margin: 0 6px;
+}
+
+.car .goods-account .account-right .total {
+  margin-left: 30px;
+}
+
+.car .goods-account .account-right .accounts {
+  font-size: 20px;
+  line-height: 50px;
+  color: #fff;
+  padding: 0 36px;
+  margin-left: 5px;
+  background-color: #B0B0B0;
+  cursor: pointer;
+}
+
+.car .goods-account .account-right .accounts:hover {
+  background-color: #FFA500;
 }
