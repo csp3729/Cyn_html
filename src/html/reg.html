@@ -27,7 +27,7 @@
         <div class="container">
             <div class="register-bt">
                 <ul>
-                    <li>
+                    <li class="conspicuous">
                         <span>1</span>
                         <p>设置用户名</p>
                     </li>
@@ -41,7 +41,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="register-con">
+            <div class="register-first con">
                 <!-- 手机号码 -->
                 <div class="box">
                     <i class="register-phone"></i>
@@ -52,7 +52,7 @@
                 <div class="box">
                     <i></i>
                     <input type="text" id="code" placeholder="请输入验证码"/>
-                    <span class="randomCode"></span>
+                    <img src="../css/code_img/code1.png" class="randomCode" />
                 </div>
                 <span class="hint code-hint"></span>
                 <!-- 手机验证码 -->
@@ -68,7 +68,41 @@
                     <span></span>
                     <p>我已阅读并同意<a href="#">服务协议</a></p>
                 </div>
-                <button class="next">下一步</button>
+                <button class="next first-next">下一步</button>
+            </div>
+            <div class="register-second con">
+                <!-- 用户名 -->
+                <div class="box">
+                    <i class="register-user"></i>
+                    <input type="text" id="phone" placeholder="请设置用户名"/>
+                </div>
+                <span class="hint user-hint"></span>
+                <!-- 邮箱 -->
+                <div class="box">
+                    <i class="register-mail"></i>
+                    <input type="text" id="phone" placeholder="请输入您的邮箱"/>
+                </div>
+                <span class="hint mail-hint"></span>
+                <!-- 密码 -->
+                <div class="box">
+                    <i class="register-password"></i>
+                    <input type="text" id="phone" placeholder="请设置您的密码"/>
+                </div>
+                <span class="hint password-hint"></span>
+                <!-- 确认密码 -->
+                <div class="box">
+                    <i class="register-affirm"></i>
+                    <input type="text" id="phone" placeholder="请确认您的密码"/>
+                </div>
+                <span class="hint affirm-hint"></span>
+                <button class="next second-next">注册</button>
+            </div>
+            <div class="register-third con">
+                <div class="register-succeed">
+                    <p>注册成功</p>
+                    <p>您的用户名：<span>王尼玛</span></p>
+                    <p>正在自动跳转登陆页面...</p>
+                </div>
             </div>
         </div>
     </main>

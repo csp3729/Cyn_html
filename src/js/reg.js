@@ -1,6 +1,6 @@
 jQuery(function($){
     //注册信息填写框
-    let $register = $('.register-con');
+    let $register = $('.con');
 
     // 手机号码元素
     let $phone = $('#phone');
