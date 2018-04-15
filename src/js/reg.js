@@ -63,9 +63,9 @@ jQuery(function($){
         };
         if($id === 'code'){
             let $val = $(this).val();
-            if(!($val === $randomCode.text())){
+            if(!($val === $randomCode.attr('data-code'))){
                 $codeHint.width('80%')
-                .text('验证码错误');
+                .text('验证码错误').css('color','#f00');
                 codeValue = 1;
             }else{
                 $codeHint.width('80%')
@@ -80,8 +80,15 @@ jQuery(function($){
                 .text('手机验证码为6位数字');
                 phoneCodeValue = 0;
             }else{
-                $phoneCodeHint.width(0);
-                phoneCodeValue = 1;
+                if($val === res){
+                    $phoneCodeHint.width('80%')
+                    .text('验证码正确').css('color','#00FF00');
+                    phoneCodeValue = 1;
+                }else{
+                    $phoneCodeHint.width('80%')
+                    .text('手机验证码错误').css('color','#f00');
+                    phoneCodeValue = 0;
+                }
             }
         }
     })
@@ -137,6 +144,11 @@ jQuery(function($){
             $btList.removeClass().eq(1).addClass('conspicuous');
         }
     })
+
+    $randomCode.on('click',function(){
+        $codeHint.width(0)
+        RandomCode();
+    });
 
     //第二步
     let $registerSecond = $('.register-second');
@@ -308,5 +320,34 @@ jQuery(function($){
     //第三步
     let $registerThird = $('.register-third');
 
+
+    //随机验证码
+    function RandomCode(){
+        ajax({
+            url:"../api/code.php",
+            data:{
+                num:randomNumber(1,30)
+            },
+            success:function(data){
+                let item = data[0];
+                $randomCode.prop('src',item.img)
+                .attr('data-code',item.dataCode);
+            }
+        })
+    }
+
+    RandomCode();
+
+    //手机验证码
+    let $getCode = $('.getCode');
+    var str = '0123456789';
+    var res ;
+    $getCode.on('click',function(){
+        res = '';
+        for(var i=0;i<6;i++){
+            res += str[parseInt(Math.random()*str.length)]
+        }
+        alert('您的随机手机验证码为'+res);
+    })
 
 });

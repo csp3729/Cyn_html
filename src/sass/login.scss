@@ -54,7 +54,7 @@
             // height:45px;
             overflow:hidden;
             border:1px solid #ddd;
-            margin-bottom:30px;
+            // margin-bottom:30px;
             i{
                 display:block;
                 float:left;
@@ -78,6 +78,9 @@
                 color:#000;
                 max-width:238px;
             }
+            #code{
+                width:127px;
+            }
             span{
                 display:block;
                 float:right;
@@ -87,10 +90,15 @@
                 background-color:#ddd;
             }
         }
-        .box:nth-child(4){
-            input{
-                width:127px;
-            }
+        .hint{
+            display:block;
+            width:0px;
+            height:14px;
+            padding:7px 0 11px 65px;
+            font-size: 14px;
+            line-height:14px;
+            color:#f00;
+            overflow:hidden;
         }
         .forget{
             padding:6px 0 29px;

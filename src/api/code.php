@@ -8,5 +8,12 @@
 
     $result = $conn->query($sql);
 
+    $data = $result->fetch_all(MYSQL_ASSOC);
+
+    $result->close();
+
+    $conn->close();
+
+    echo json_encode($data,JSON_UNESCAPED_UNICODE);
     
 ?>

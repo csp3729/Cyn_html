@@ -5,6 +5,9 @@
     <title>为为商城 - 登　录</title>
     <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <script src="../lib/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="../js/common.js" type="text/javascript"></script>
+    <script src="../js/login.js" type="text/javascript"></script>
 </head>
 <body>
     <header class="header">
@@ -31,17 +34,20 @@
                     <p>没有账号?&nbsp;<a href="reg.html">免费注册</a></p>
                     <div class="box">
                         <i class="user"></i>
-                        <input type="text" placeholder="用户名/手机/邮箱"/>
+                        <input type="text" id="user"placeholder="用户名/手机/邮箱"/>
                     </div>
+                    <span class="hint user-hint"></span>
                     <div class="box">
                         <i class="password"></i>
-                        <input type="text" placeholder="密码"/>
+                        <input type="text" id="password" placeholder="密码"/>
                     </div>
+                    <span class="hint password-hint"></span>
                     <div class="box">
                         <i></i>
-                        <input type="text" id="" placeholder="请输入验证码"/>
-                        <span></span>
+                        <input type="text" id="code" placeholder="请输入验证码"/>
+                        <img src="" class="randomCode" />
                     </div>
+                    <span class="hint code-hint"></span>
                     <p class="forget"><a href="#">忘记密码? </a></p>
                     <button class="user-login">登录</button>
                 </div>

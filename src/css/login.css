@@ -58,7 +58,6 @@
 .login-right .login-box .box {
   overflow: hidden;
   border: 1px solid #ddd;
-  margin-bottom: 30px;
 }
 
 .login-right .login-box .box i {
@@ -88,6 +87,10 @@
   max-width: 238px;
 }
 
+.login-right .login-box .box #code {
+  width: 127px;
+}
+
 .login-right .login-box .box span {
   display: block;
   float: right;
@@ -97,8 +100,15 @@
   background-color: #ddd;
 }
 
-.login-right .login-box .box:nth-child(4) input {
-  width: 127px;
+.login-right .login-box .hint {
+  display: block;
+  width: 0px;
+  height: 14px;
+  padding: 7px 0 11px 65px;
+  font-size: 14px;
+  line-height: 14px;
+  color: #f00;
+  overflow: hidden;
 }
 
 .login-right .login-box .forget {
