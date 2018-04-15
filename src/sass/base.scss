@@ -266,6 +266,7 @@ s,i,em{font-style:normal;text-decoration:none;}
         border:1px solid #f0f0f0;
         margin-top:23px;
         background-color:#FAFAFA;
+        cursor:pointer;
         i:nth-child(1){
             display:block;
             width:20px;
@@ -273,9 +274,12 @@ s,i,em{font-style:normal;text-decoration:none;}
             background:url('../images/top_bg.png') no-repeat -120px 0;
             margin:14px 8px 0 10px;
         }
-        span{
+        a{
+            display:block;
+            float:left;
             font-size:12px;
             line-height:40px;
+            color:#666;
         }
         .arrows{
             display:block;

@@ -325,6 +325,7 @@ s, i, em {
   border: 1px solid #f0f0f0;
   margin-top: 23px;
   background-color: #FAFAFA;
+  cursor: pointer;
 }
 
 .header-bottom .head-right i:nth-child(1) {
@@ -335,9 +336,12 @@ s, i, em {
   margin: 14px 8px 0 10px;
 }
 
-.header-bottom .head-right span {
+.header-bottom .head-right a {
+  display: block;
+  float: left;
   font-size: 12px;
   line-height: 40px;
+  color: #666;
 }
 
 .header-bottom .head-right .arrows {

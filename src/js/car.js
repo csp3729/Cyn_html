@@ -23,7 +23,7 @@ jQuery(function($){
         //遍历cookie数组生成页面解构
         let $res = $.map(goodslist,function(item){
             //创建单个商品ul
-            let $ul = $('<ul/>').prop('class',item.id);
+            let $ul = $('<ul/>').attr('data-id',item.id);
             //把商品信息写入到ul
             $ul.append(`<li>
                             <input type="checkbox" class="choice"/>
@@ -44,7 +44,7 @@ jQuery(function($){
                             <span class="plus">+</span>
                             <em><input type="text" value=${item.qty} class="qty"/></em>
                         </li>
-                        <li class="subtotal">¥${item.retail*item.qty}</li>
+                        <li class="subtotal">¥${(item.retail*item.qty).toFixed(2)}</li>
                         <li class="operation">
                             <span class="enshrine"><a>移入收藏夹</a></span>
                             <span class="del"><a>删除</a></span>
@@ -61,8 +61,11 @@ jQuery(function($){
 
     //判断购物车是否有商品
     if($carGoods.children().length > 0){
-        //把商品数写入页面头部
-        $allGoods.text($carGoods.children().length);
+        //把商品数量写入页面头部
+        function gQty(){
+            $allGoods.text($carGoods.children().length);
+        }
+        gQty();
 
         //减少商品数量
         $carGoods.on('click','.minus',function(){
@@ -97,10 +100,25 @@ jQuery(function($){
             let $subtotal = $(this).closest('ul').find('.subtotal');
             $subtotal.text('¥' + ($(this).val() * $retail).toFixed(2));
         })
+
+        //声明变量用于储存已选商品信息
         let $choiceGoods;
+
+        //声明变量储存页面所有复选框
+        let $inputLi;
+        //声明变量储存页面商品复选框
+        let $choiceLi;
+        //每次删除商品后都需要重新获取复选框信息
+        //把获取复选框写入函数，方便重新获取
+        function check(){
+            $inputLi = $(':checkbox');
+            $choiceLi = $inputLi.filter('.choice');
+        }
+        check();
+        // let $inputLi = $(':checkbox');
+        // let $choiceLi = $inputLi.filter('.choice');
+
         //全选商品
-        let $inputLi = $(':checkbox');
-        let $choiceLi = $inputLi.filter('.choice');
         $car.on('click','.all',function(){
             if($(this).prop('checked')){
                 $inputLi.prop('checked',true);
@@ -120,8 +138,8 @@ jQuery(function($){
                 }
             })
         })
+
         //显示已选商品数量和商品总价
-        
         .on('click',$inputLi,function(){
             $choiceGoods = $("input:checkbox[class='choice']:checked");
             let qty = $choiceGoods.length;
@@ -134,11 +152,11 @@ jQuery(function($){
             $total.children('span').text(tatol.toFixed(2));
         })
 
-        //删除商品
+        //删除单个商品
         .on('click','.del a',function(){
-            let $id = $(this).closest('ul').attr('class');
+            var id = $(this).closest('ul').attr('data-id');
             for(var i=0;i<goodslist.length;i++){
-                if(goodslist[i].id === $id){
+                if(goodslist[i].id === id){
                     //删除cookie中对应的商品
                     goodslist.splice(i,1);
                     //删除页面购物车对应的商品
@@ -149,21 +167,40 @@ jQuery(function($){
             }
             //把新的商品列表写入到cookie
             Cookie.set('goodslist',JSON.stringify(goodslist));
+            check();//删除单个商品后重新获取复选框
+            gQty();//商品数量写入页面头部
         })
 
-        //多选删除商品
+        //删除多个商品
         .on('click','.goods-account .del',function(){
+            //获取页面已经选商品（复选框选中状态）
             $choiceGoods = $("input:checkbox[class='choice']:checked");
-            var arr = $choiceGoods.map(function(item){
-                console.log(item)//错了，回去修改
-                // return item.closest('ul').attr('class');
-                
+            //遍历已选商品把商品id存放在arr数组中
+            var arr = $choiceGoods.map(function(){
+                let dataId = $(this).closest('ul').attr('data-id');
+                return dataId;
             })
-            console.log(arr);
+
+            var id;//用来存放每个商品的id
+            for(var i=0;i<arr.length;i++){
+                id = arr[i];
+                for(var i=0;i<goodslist.length;i++){
+                    if(goodslist[i].id === id){
+                        //删除cookie中对应的商品
+                        goodslist.splice(i,1);
+                        // //删除页面购物车对应的商品
+                        // $(this).closest('ul').remove();
+                        //删除商品后退出循环
+                        break;
+                    }
+                }
+                //把新的商品列表写入到cookie
+                Cookie.set('goodslist',JSON.stringify(goodslist));
+                render();//删除多个商品后重新加载页面结构
+            }
+            check();//删除多个商品后重新获取复选框
+            gQty();//商品数量写入页面头部
         })
     }
-
-    //直接测试写这里
-
 
 });
