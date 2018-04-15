@@ -1,21 +1,10 @@
 <?php
-/**
- * @Author: Marte
- * @Date:   2018-04-11 20:30:05
- * @Last Modified by:   Marte
- * @Last Modified time: 2018-04-13 17:28:40
- */
+    //调用文件链接数据库
+    require('connect.php');
+
     //设置page,qty信息
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $qty = isset($_GET['qty']) ? $_GET['qty'] : 10;
-
-    //创建链接
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "project";
-
-    $conn = new mysqli($servername,$username,$password,$dbname);
 
     //获取查询结果集
     $result = $conn->query('select * from goods');
