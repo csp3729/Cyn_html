@@ -38,11 +38,10 @@ jQuery(function($){
 
     $registerFirst.on('change','input',function(){
         let $id = $(this).prop('id');
+        let $val = $(this).val();
         if($id === 'phone'){
-            let $val = $(this).val();
             if(!(phone.test($val))){
-                $phoneHint.width('80%')
-                .text('请输入11位正确手机号码');
+                $phoneHint.text('请输入11位正确手机号码');
                 phoneValue = 0;
             }else{
                 ajax({
@@ -50,11 +49,10 @@ jQuery(function($){
                     data:{phone:$val},
                     success:function(data){
                         if(data === 'fail'){
-                            $phoneHint.width('80%')
-                            .text('该手机号码已注册');
+                            $phoneHint.text('该手机号码已注册');
                             phoneValue = 0;
                         }else{
-                            $phoneHint.width(0);
+                            $phoneHint.text('');
                             phoneValue = 1;
                         }
                     }
@@ -62,31 +60,24 @@ jQuery(function($){
             }
         };
         if($id === 'code'){
-            let $val = $(this).val();
-            if(!($val === $randomCode.attr('data-code'))){
-                $codeHint.width('80%')
-                .text('验证码错误').css('color','#f00');
-                codeValue = 1;
+            if(!($val.toLowerCase() === $randomCode.attr('data-code'))){
+                $codeHint.text('验证码错误').css('color','#f00');
+                codeValue = 0;
             }else{
-                $codeHint.width('80%')
-                .text('验证码正确').css('color','#00FF00');
+                $codeHint.text('验证码正确').css('color','#00FF00');
                 codeValue = 1;
             }
         };
         if($id === 'phoneCode'){
-            let $val = $(this).val();
             if(!(/[\d]{6}/).test($val)){
-                $phoneCodeHint.width('80%')
-                .text('手机验证码为6位数字');
+                $phoneCodeHint.text('手机验证码为6位数字').css('color','#F00');
                 phoneCodeValue = 0;
             }else{
                 if($val === res){
-                    $phoneCodeHint.width('80%')
-                    .text('验证码正确').css('color','#00FF00');
+                    $phoneCodeHint.text('手机验证码正确').css('color','#00FF00');
                     phoneCodeValue = 1;
                 }else{
-                    $phoneCodeHint.width('80%')
-                    .text('手机验证码错误').css('color','#f00');
+                    $phoneCodeHint.text('手机验证码错误').css('color','#f00');
                     phoneCodeValue = 0;
                 }
             }
@@ -102,13 +93,12 @@ jQuery(function($){
                 'borderColor':'#000'
             });
         }else{
-            console.log(666)
             agreemenValue = 1;
             $(this).css({
                 'background':'url("../css/img/accept-icon.png")',
                 'borderColor':'#fff'
             });
-            $agreementHint.width(0);
+            $agreementHint.text('');
         }
     })
 
@@ -116,26 +106,22 @@ jQuery(function($){
     .on('click','.first-next',function(){
         //判断是否填写手机号码
         if($phone.val() === ""){
-            $phoneHint.width('80%')
-            .text('请输入11位正确手机号码');
+            $phoneHint.text('请输入11位正确手机号码');
         }
 
         //判断是否填写验证码
         if($code.val() === ""){
-            $codeHint.width('80%')
-            .text('验证码错误');
+            $codeHint.text('验证码错误').css('color','#f00');
         }
 
         //判断是填写手机验证码
         if($phoneCode.val() === ""){
-            $phoneCodeHint.width('80%')
-            .text('手机验证码不能为空');
+            $phoneCodeHint.text('手机验证码不能为空').css('color','#f00');
         }
 
         //判断是否勾选协议
         if(agreemenValue === 0){
-            $agreementHint.width('80%')
-            .text('请阅读并同意该协议');
+            $agreementHint.text('请阅读并同意该协议');
         }
 
         if(phoneValue === 1 && codeValue === 1 && phoneCodeValue === 1 && agreemenValue === 1){
@@ -146,7 +132,9 @@ jQuery(function($){
     })
 
     $randomCode.on('click',function(){
-        $codeHint.width(0)
+        $code.val('');
+        $codeHint.text('');
+        codeValue = 0;
         RandomCode();
     });
 
@@ -192,8 +180,8 @@ jQuery(function($){
     $registerSecond.on('change','input',function(){
         console.log(666);
         let $id = $(this).prop('id');
+        let $val = $(this).val();
         if($id === 'user'){
-            let $val = $(this).val();
             if(!(userReg.test($val))){
                 $userHint.width('80%')
                 .text('请输入6到16位(包括字母、数字、下划线、减号)');
@@ -216,7 +204,6 @@ jQuery(function($){
             }
         };
         if($id === 'mail'){
-            let $val = $(this).val();
             if(!(mailReg.test($val))){
                 $mailHint.width('80%')
                 .text('请填写正确的邮箱地址');
@@ -239,7 +226,6 @@ jQuery(function($){
             }
         };
         if($id === 'password'){
-            let $val = $(this).val();
             if(!(passwordReg.test($val))){
                 $passwordHint.width('80%')
                 .text('请输入8到16位数字与字母组合的密码');
@@ -250,7 +236,6 @@ jQuery(function($){
             }
         };
         if($id === 'affirm'){
-            let $val = $(this).val();
             if($val != $('#password').val()){
                 $affirmHint.width('80%')
                 .text('两次输入的密码不一致');
@@ -343,6 +328,9 @@ jQuery(function($){
     var str = '0123456789';
     var res ;
     $getCode.on('click',function(){
+        $phoneCode.val('');
+        $phoneCodeHint.text('');
+        phoneCodeValue = 0;
         res = '';
         for(var i=0;i<6;i++){
             res += str[parseInt(Math.random()*str.length)]

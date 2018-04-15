@@ -13,7 +13,7 @@
 
     $result = $conn->query($sql);
 
-    if($result ->num_rows > 0){
+    if($result->num_rows > 0){
         echo "fail";
     }else{
         if($type === 'reg'){
