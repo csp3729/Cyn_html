@@ -510,3 +510,19 @@ function type(data){
 // }
 
 
+
+
+//页面登录状态的封装函数
+function sqlLogin(){
+    let res = Cookie.get('username');
+    if(res.length > 0){
+        let $loginA = $('.login_a');
+        let $registerA = $('.register_a');
+        $loginA.text(res).prop('href','#');
+        $registerA.text('退出').prop('href','../index.html').on('click',function(){
+            document.cookie = "username=;path=/";
+        });
+    }else{
+        return;
+    }
+}

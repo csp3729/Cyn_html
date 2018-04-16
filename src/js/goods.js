@@ -117,6 +117,8 @@ jQuery(function($){
         document.cookie = 'goodslist='+ JSON.stringify(goodslist);
     });
 
+    sqlLogin();
+
 });
 
 

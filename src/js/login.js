@@ -14,7 +14,6 @@ jQuery(function($){
     let passwordValue =0;
     let codeValue = 0;
 
-    console.log(userValue);
     $loginBox.on('change','input',function(){
         let $id = $(this).prop('id');
         let $val = $(this).val();
@@ -69,8 +68,9 @@ jQuery(function($){
                     if(data === false){
                         $passwordHint.text('密码错误');
                     }else{
-                        console.log(666);
-                        //已经能验证成功，差写登录跳转
+                        let username = $user.val();
+                        document.cookie = 'username=' + username + ';path=/';
+                        location.href = "../index.html?user=" + username + ";path=/";
                     }
                 }
             })

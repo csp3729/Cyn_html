@@ -6,7 +6,6 @@ jQuery(function($){
     let $qty = 12;
 
     let fn = function(data){
-        console.log(data);
         //生成商品列表信息
         let $res = $.map(data.data,function(idx){
             $li = $('<li/>').attr('data-id',idx.id);
@@ -22,7 +21,6 @@ jQuery(function($){
             `);
             return $li;
         });
-        console.log($res);
 
         //把商品信息插入页面
         $show.empty().append($res);
@@ -104,7 +102,8 @@ jQuery(function($){
         location.href="goods.html?id=" + $dataId;
     })
 
-
+    //执行页面登录状态函数
+    sqlLogin();
     
     // 
     
