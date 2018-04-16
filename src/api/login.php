@@ -9,30 +9,35 @@
 
     $result = $conn->query($sql);
 
-    $res = $result->fetch_all(MYSQLI_ASSOC);
-    // var_dump($res[0]) ;
+    $res = $result->fetch_assoc();
 
     if($result->num_rows <= 0){
-        echo "fail";
+        echo 'fail';
     }else{
         if($password != null){
-            if(in_array(md5($password),$res[0])){
-                echo 'true';
+            if(md5($password) === $res['password']){
+                echo 'success';
             }else{
-                echo 'false';
+                echo 'fail';
             }
         }else{
             echo "success";
         }
-        
     }
 
+    // if($result->num_rows <= 0){
+    //     echo "fail";
+    // }else{
+    //     if($password != null){
+    //         if(in_array(md5($password),$res[0])){
+    //             echo 'true';
+    //         }else{
+    //             echo 'false';
+    //         }
+    //     }else{
+    //         echo "success";
+    //     }
+        
+    // }
 
-
-    // $capitals = array(  
-    //   'Arizona' => 'Phoenix',  
-    //   'Alaska'  => 'Juneau',  
-    //   'Alabama' => 'Montgomery'  
-    // );  
-    // var_dump($capitals);
 ?>

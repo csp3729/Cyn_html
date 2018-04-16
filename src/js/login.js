@@ -24,6 +24,7 @@ jQuery(function($){
                 url:"../api/login.php",
                 data:{user:$val},
                 success:function(data){
+                    console.log(data)
                     if(data === 'fail'){
                         $userHint.text('用户不存在');
                     }else{
@@ -65,7 +66,7 @@ jQuery(function($){
                 },
                 success:function(data){
                     console.log(data)
-                    if(data === false){
+                    if(data === 'fail'){
                         $passwordHint.text('密码错误');
                     }else{
                         let username = $user.val();
